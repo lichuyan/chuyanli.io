@@ -83,11 +83,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>一、 Angualr CLI创建服务<br>Scaffold                        Usage<br>Component                     ng g component my-new-component<br>Service                       ng g service my-new-service<br>二、创建服务命令<br>ng g service my-new-service<br>创建到指定目录下面<br>ng g service services/storage<br>三、app.module.ts里面引入创建的服务</p>
+<p>1.app.module.ts 里面引入创建的服务<br>import { StorageService } from ‘./services/storage.service’;</p>
+<ol>
+<li><p>NgModule 里面的providers 里面依赖注入服务<br>@NgModule({<br>declarations: [</p>
+<pre><code>AppComponent, 
+HeaderComponent,
+FooterComponent, 
+NewsComponent, 
+TodolistComponent ], 
+</code></pre><p>imports: [ BrowserModule,</p>
+<pre><code>FormsModule ], 
+</code></pre><p>providers: [StorageService],<br>bootstrap: [AppComponent] })<br>export class AppModule { }</p>
+<p>四、使用的页面引入服务，注册服务<br>import { StorageService } from ‘../../services/storage.service’;</p>
+<p>constructor(private storage: StorageService) { }</p>
+<p>使用<br>addData(){ </p>
+<pre><code>// alert(this.username); 
+this.list.push(this.username); 
+this.storage.set(&apos;todolist&apos;,this.list); 
+</code></pre><p>}<br>removerData(key){<br>   console.log(key); </p>
+<pre><code>this.list.splice(key,1); 
+this.storage.set(&apos;todolist&apos;,this.list); 
+</code></pre><p>}</p>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/19/myHexo/" data-id="cjez0nqag0000ssaj5h7gq6g5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/19/myHexo/" data-id="cjez120mh0000dwaj8x67uku3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/18/hello-world/" data-id="cjez0nqcy0001ssaj96iod1tr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/18/hello-world/" data-id="cjez120mq0001dwajgj65on28" class="article-share-link">Share</a>
       
       
     </footer>

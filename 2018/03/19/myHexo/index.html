@@ -5,13 +5,16 @@
   
   <title>myHexo | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、 Angualr CLI创建服务Scaffold                        UsageComponent                     ng g component my-new-componentService                       ng g service my-new-service二、创建服务命令ng g service my-new">
+<meta property="og:type" content="article">
 <meta property="og:title" content="myHexo">
 <meta property="og:url" content="http://yoursite.com/2018/03/19/myHexo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2018-03-19T10:50:01.921Z">
+<meta property="og:description" content="一、 Angualr CLI创建服务Scaffold                        UsageComponent                     ng g component my-new-componentService                       ng g service my-new-service二、创建服务命令ng g service my-new">
+<meta property="og:updated_time" content="2018-03-20T02:15:25.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myHexo">
+<meta name="twitter:description" content="一、 Angualr CLI创建服务Scaffold                        UsageComponent                     ng g component my-new-componentService                       ng g service my-new-service二、创建服务命令ng g service my-new">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -82,11 +85,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>一、 Angualr CLI创建服务<br>Scaffold                        Usage<br>Component                     ng g component my-new-component<br>Service                       ng g service my-new-service<br>二、创建服务命令<br>ng g service my-new-service<br>创建到指定目录下面<br>ng g service services/storage<br>三、app.module.ts里面引入创建的服务</p>
+<p>1.app.module.ts 里面引入创建的服务<br>import { StorageService } from ‘./services/storage.service’;</p>
+<ol>
+<li><p>NgModule 里面的providers 里面依赖注入服务<br>@NgModule({<br>declarations: [</p>
+<pre><code>AppComponent, 
+HeaderComponent,
+FooterComponent, 
+NewsComponent, 
+TodolistComponent ], 
+</code></pre><p>imports: [ BrowserModule,</p>
+<pre><code>FormsModule ], 
+</code></pre><p>providers: [StorageService],<br>bootstrap: [AppComponent] })<br>export class AppModule { }</p>
+<p>四、使用的页面引入服务，注册服务<br>import { StorageService } from ‘../../services/storage.service’;</p>
+<p>constructor(private storage: StorageService) { }</p>
+<p>使用<br>addData(){ </p>
+<pre><code>// alert(this.username); 
+this.list.push(this.username); 
+this.storage.set(&apos;todolist&apos;,this.list); 
+</code></pre><p>}<br>removerData(key){<br>   console.log(key); </p>
+<pre><code>this.list.splice(key,1); 
+this.storage.set(&apos;todolist&apos;,this.list); 
+</code></pre><p>}</p>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/19/myHexo/" data-id="cjez0nqag0000ssaj5h7gq6g5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/19/myHexo/" data-id="cjez120mh0000dwaj8x67uku3" class="article-share-link">Share</a>
       
       
     </footer>
