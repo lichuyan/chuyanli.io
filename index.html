@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -83,7 +83,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、 Angualr CLI创建服务<br>Scaffold                        Usage<br>Component                     ng g component my-new-component<br>Service                       ng g service my-new-service<br>二、创建服务命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g service my-new-service </span><br></pre></td></tr></table></figure><br>创建到指定目录下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g service services/storage</span><br></pre></td></tr></table></figure><br>三、app.module.ts里面引入创建的服务</p>
+        <p>一、 Angualr CLI创建服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> Scaffold                                    Usage </span><br><span class="line">Component                       ng g component my-new-component </span><br><span class="line"> Service                         ng g service my-new-service</span><br></pre></td></tr></table></figure><br>二、创建服务命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g service my-new-service </span><br></pre></td></tr></table></figure><br>创建到指定目录下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g service services/storage</span><br></pre></td></tr></table></figure><br>三、app.module.ts里面引入创建的服务</p>
 <p>1.app.module.ts 里面引入创建的服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; StorageService &#125; from &apos;./services/storage.service&apos;;</span><br></pre></td></tr></table></figure></p>
 <ol>
 <li><p>NgModule 里面的providers 里面依赖注入服务</p>
@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/19/Service（服务）/" data-id="cjez1g7tm0001bcajhpw9y6tr" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/19/Service（服务）/" data-id="cjez33nwp0000msaju089wd37" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/18/hello-world/" data-id="cjez1g7tc0000bcaj1abpukux" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/18/hello-world/" data-id="cjez33nwp0001msaj7fvvdnhg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +177,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -202,7 +202,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
