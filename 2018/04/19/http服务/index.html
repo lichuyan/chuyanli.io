@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/19/http服务/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Angular4.x get post以及 jsonp请求数据一 通过 Http、Jsonp请求数据、使用RxJs。RxJS是一种针对异步数据流编程工具，或者叫响应式扩展编程；可不管如何解释RxJS其目标就是异步编程，Angular引入RxJS为了就是让异步可控、更简单。 大部分RxJS操作符都不包括在Angular的Observable基本实现中，基本实现只包括Angular本身所需的功能。 如">
-<meta property="og:updated_time" content="2018-04-19T06:21:24.397Z">
+<meta property="og:updated_time" content="2018-04-19T06:31:12.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP服务">
 <meta name="twitter:description" content="Angular4.x get post以及 jsonp请求数据一 通过 Http、Jsonp请求数据、使用RxJs。RxJS是一种针对异步数据流编程工具，或者叫响应式扩展编程；可不管如何解释RxJS其目标就是异步编程，Angular引入RxJS为了就是让异步可控、更简单。 大部分RxJS操作符都不包括在Angular的Observable基本实现中，基本实现只包括Angular本身所需的功能。 如">
@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -85,7 +85,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Angular4-x-get-post以及-jsonp请求数据"><a href="#Angular4-x-get-post以及-jsonp请求数据" class="headerlink" title="Angular4.x get post以及 jsonp请求数据"></a>Angular4.x get post以及 jsonp请求数据</h2><h3 id="一-通过-Http、Jsonp请求数据、使用RxJs。"><a href="#一-通过-Http、Jsonp请求数据、使用RxJs。" class="headerlink" title="一 通过 Http、Jsonp请求数据、使用RxJs。"></a>一 通过 Http、Jsonp请求数据、使用RxJs。</h3><p>RxJS是一种针对异步数据流编程工具，或者叫响应式扩展编程；可不管如何解释RxJS其目标就是异步编程，Angular引入RxJS为了就是让异步可控、更简单。 大部分RxJS操作符都不包括在Angular的Observable基本实现中，基本实现只包括Angular本身所需的功能。 如果想要更多的RxJS功能<br>，我们必须导入其所定义的库来扩展Observable对象， 以下是这个模块所需导入的所有RxJS操作符：<br>1、 引入Http 、Jsonp、RxJs 模块</p>
+        <h2 id="Angular4-x-get-post以及-jsonp请求数据"><a href="#Angular4-x-get-post以及-jsonp请求数据" class="headerlink" title="Angular4.x get post以及 jsonp请求数据"></a>Angular4.x get post以及 jsonp请求数据</h2><h3 id="一-通过-Http、Jsonp请求数据、使用RxJs。"><a href="#一-通过-Http、Jsonp请求数据、使用RxJs。" class="headerlink" title="一 通过 Http、Jsonp请求数据、使用RxJs。"></a>一 通过 Http、Jsonp请求数据、使用RxJs。</h3><p>RxJS是一种针对异步数据流编程工具，或者叫响应式扩展编程；可不管如何解释RxJS其目标就是异步编程，Angular引入RxJS为了就是让异步可控、更简单。 大部分RxJS操作符都不包括在Angular的Observable基本实现中，基本实现只包括Angular本身所需的功能。 如果想要更多的RxJS功能<br>，我们必须导入其所定义的库来扩展Observable对象， 以下是这个模块所需导入的所有RxJS操作符：</p>
+<h3 id="1、-引入Http-、Jsonp、RxJs-模块"><a href="#1、-引入Http-、Jsonp、RxJs-模块" class="headerlink" title="1、 引入Http 、Jsonp、RxJs 模块"></a>1、 引入Http 、Jsonp、RxJs 模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Http,Jsonp&#125; from <span class="string">"@angular/http"</span>;</span><br><span class="line">import &#123;Observable&#125; from <span class="string">"rxjs"</span>;</span><br><span class="line">import <span class="string">"rxjs/Rx"</span>;</span><br></pre></td></tr></table></figure>
+<p>你可能并不熟悉这种 import ‘rxjs/Rx’语法，它缺少了花括号中的导入列表：{…}。<br>这是因为我们并不需要操作符本身，这种情况下，我们所做的其实是导入这个库，加载并运行其中的脚本，<br>它会把操作符添加到 Observable 类中</p>
+<h3 id="2、-构造函数内申明："><a href="#2、-构造函数内申明：" class="headerlink" title="2、 构造函数内申明："></a>2、 构造函数内申明：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">constructor(private http:Http,private jsonp:Jsonp) &#123; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、get-请求"><a href="#3、get-请求" class="headerlink" title="3、get 请求"></a>3、get 请求</h3><pre><code class="bash">this.http.get(<span class="string">"http://www.phonegap100.com/appapi.php?a=getPortalList&amp;catid=20&amp;p</span>
+<span class="string">age=1"</span>)
+ .map(res =&gt; res.json()) .subscribe(
+ (data)=&gt;{
+ console.log(data);
+ this.list=data[<span class="string">'data'</span>];
+ console.log(this.list);
+ }
+  );
+</code></pre>
+<h3 id="4、Jsonp-请求"><a href="#4、Jsonp-请求" class="headerlink" title="4、Jsonp 请求"></a>4、Jsonp 请求</h3><pre><code class="bash"> this.jsonp.get(<span class="string">"http://www.phonegap100.com/appapi.php?a=getPortalList&amp;catid=20&amp;page</span>
+<span class="string">=1&amp;callback=JSONP_CALLBACK"</span>)
+ .map(res =&gt; res.json()) .subscribe(
+ (data)=&gt;{
+ console.log(data);
+ this.list=data[<span class="string">'data'</span>];
+ console.log(this.list);
+
+ }
+);
+</code></pre>
+<h3 id="http-get-方法中返回一个-Observable-对象，我们之后调用-RxJS-的-map-操作符对返回的数据"><a href="#http-get-方法中返回一个-Observable-对象，我们之后调用-RxJS-的-map-操作符对返回的数据" class="headerlink" title="http.get 方法中返回一个 Observable 对象，我们之后调用 RxJS 的 map 操作符对返回的数据"></a>http.get 方法中返回一个 Observable 对象，我们之后调用 RxJS 的 map 操作符对返回的数据</h3><p>做处理。</p>
 
       
     </div>
@@ -124,7 +149,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
     </div>
@@ -134,7 +159,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
